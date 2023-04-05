@@ -30,7 +30,7 @@ def get_response_data(html_data):
     # exit()
     doc = pq(html_data1)
     # 我们获取标题
-    title_data = doc('.xx_list li a')
+    title_data = doc('.xx_list #13861 li a')
     print(title_data)
 
 
