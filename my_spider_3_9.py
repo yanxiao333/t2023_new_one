@@ -23,6 +23,7 @@ def get_response_data(html_data):
     '''
     解析函数：
     '''
+    html_data1 = html_data.replace('')
     doc = pq(html_data)
     # 我们获取标题
     title_data = doc('#13861 .simple_pgContainer li')
