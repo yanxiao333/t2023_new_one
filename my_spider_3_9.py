@@ -13,7 +13,7 @@ headers = headers_raw_to_dict(str)
 def run():
     res = requests.get(url=url, headers=headers)
     print(res.status_code, res.encoding)
-    res.encoding = 'gb2312'
+    res.encoding = '4'
     html_data = res.text
     # print(html_data)
     return html_data
@@ -23,10 +23,14 @@ def get_response_data(html_data):
     '''
     解析函数：
     '''
-    html_data1 = html_data.replace('')
-    doc = pq(html_data)
+    html_data1 = html_data.replace('<record>',
+                                   '').replace('</record>', '').replace(
+                                       '![CDATA[', '').replace(']]>', '')
+    # print(html_data1)
+    # exit()
+    doc = pq(html_data1)
     # 我们获取标题
-    title_data = doc('#13861 .simple_pgContainer li')
+    title_data = doc('.xx_list li a')
     print(title_data)
 
 
