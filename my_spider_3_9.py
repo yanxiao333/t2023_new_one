@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import requests
+import requests, re
 from copyheaders import headers_raw_to_dict
 from pyquery import PyQuery as pq
 
@@ -23,15 +23,27 @@ def get_response_data(html_data):
     '''
     解析函数：
     '''
-    html_data1 = html_data.replace('<record>',
-                                   '').replace('</record>', '').replace(
-                                       '![CDATA[', '').replace(']]>', '')
+    html_data1 = html_data.replace('<record><', '').replace(
+        '![CDATA[',
+        '').replace(']]></record>',
+                    '').replace('<datastore>',
+                                '').replace('nextgroup><',
+                                            '').replace('</datastore>', '')
     # print(html_data1)
-    # exit()
-    doc = pq(html_data1)
     # 我们获取标题
-    title_data = doc('.xx_list #13861 li a')
-    print(title_data)
+    detail_dat = re.findall(
+        f'<li>.*?<a target="_blank" href="(.*?)" title="(.*?)</a>.*?</li>',
+        html_data1)
+    # print(detail_dat)
+    return detail_dat
+
+
+def reparse_detail_dat(detail_dat):
+    for data2 in detail_dat:
+        if '://' not in data2[0]:
+            link = 'http://longxian.gov.cn' + data2[0]
+            title = data2[1]
+            print(link, title)
 
 
 def main():
@@ -39,7 +51,8 @@ def main():
     主函数体
     '''
     html_data = run()
-    get_response_data(html_data)
+    detail_dat = get_response_data(html_data)
+    reparse_detail_dat(detail_dat)
 
 
 if __name__ == '__main__':
