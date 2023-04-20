@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // vim setting
 "vim.easymotion": true,               //easymotion 功能启用
 "vim.incsearch": true,                  //incsearch 功能启用
@@ -365,3 +366,11 @@
     },
 ],
 "vim.easymotion": true,
+=======
+{
+    "python.formatting.provider": "none",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    }
+}
+>>>>>>> 63e2668 (js_reverse4_19)
