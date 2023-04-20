@@ -1,6 +1,10 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "jsdom": "^21.1.1",
     "node": "^19.8.1"
+=======
+    "crypto-js": "^4.1.1"
+>>>>>>> acd91b5 (js_逆向——day2)
   }
 }
