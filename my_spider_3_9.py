@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+#!C:/Users/凡人/AppData/Local/Programs/Python/Python39/Python.exe
+# -*- coding:UTF-8 -*-
+# AUTHOR: XiaoDong Yan
+# FILE: F:\vscode\t2023_new_one\my_spider_3_9.py
+# DATE: 2023/04/23 周日
+# TIME: 18:59:13
+
+# DESCRIPTION:
+
 import requests, re
 from copyheaders import headers_raw_to_dict
 from pyquery import PyQuery as pq
