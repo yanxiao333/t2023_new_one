@@ -34,12 +34,8 @@ def get_download_content(detail_url):
         res1 = session.get(url=detail_url, headers=headers)
         print(res1.status_code, res1.encoding)
         if res1.status_code == 200:
-            html = res1.text
-            print(html)
-            exit()
-            content = extractor.extract(html)
-            print(content)
-        pass
+            html_res = res1.html.render('h2')
+            print(html_res)
     except Exception as e:
         print('Error downloading', e)
 
