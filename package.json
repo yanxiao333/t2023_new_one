@@ -2,6 +2,11 @@
   "dependencies": {
     "crypto-js": "^4.1.1",
     "jsdom": "^21.1.1",
+<<<<<<< HEAD
     "node": "^19.8.1"
+=======
+    "node": "^19.8.1",
+    "crypto-js": "^4.1.1"
+>>>>>>> 195f0b8f1239ee6b06eb4a1d2707a3f512c0f3d7
   }
 }
