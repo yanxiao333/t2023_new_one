@@ -8,6 +8,7 @@
 # DESCRIPTION:
 
 import requests
+import execjs
 
 cookies = {
     'btoken': 'CH9L2VLN61YXDI796H34UQIWDDII9CC1',
@@ -65,4 +66,8 @@ response = requests.post(
     headers=headers,
     json=json_data,
 ).json()
-print(response['d'])
+text1 = response['d']
+jscode1 = open('js_day2_demo.js', 'r', encoding='utf8').read()
+datas = execjs.compile(jscode1).call('main345', text1)['list']
+for i in datas:
+    print(i['name'], i['event'])
