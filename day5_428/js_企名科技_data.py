@@ -22,7 +22,7 @@ data = {
     'tag_type': '',
     'province': '',
     'lunci': '',
-    'page': 2,
+    'page': 1,
     'num': 20,
     'unionid': '',
 }
