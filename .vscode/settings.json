@@ -1,71 +1,117 @@
-<<<<<<< HEAD
 // vim setting
-"vim.easymotion": true,               //easymotion 功能启用
-"vim.incsearch": true,                  //incsearch 功能启用
-"vim.useSystemClipboard": true,        //使用系统剪贴板，启用   
-"vim.useCtrlKeys": true,               //使用 Ctrls 按键
-"vim.hlsearch": true,                  //启用 hlsearch
-"vim.insertModeKeyBindings":[          //insert 模式下的按键绑定
+"vim.easymotion": true, //easymotion 功能启用
+"vim.incsearch": true, //incsearch 功能启用
+"vim.useSystemClipboard": true, //使用系统剪贴板，启用
+"vim.useCtrlKeys": true, //使用 Ctrls 按键
+"vim.hlsearch": true, //启用 hlsearch
+"vim.insertModeKeyBindings": [ //insert 模式下的按键绑定
     {
-    "before": ["j", "j"],              //使用 before 代替 after 中的按键或者命令（这里的 befor 和 after 对象均为数组）
-    "after": ["<Esc>"]
+        "before": [
+            "j",
+            "j"
+        ], //使用 before 代替 after 中的按键或者命令（这里的 befor 和 after 对象均为数组）
+        "after": [
+            "<Esc>"
+        ]
     },
     {
-        "before":["<Up>"],
-        "after":["<Nop>"]
-    }, 
-    {
-        "before":["<Down>"],
-        "after":["<Nop>"]
+        "before": [
+            "<Up>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
     },
-     {
-        "before":["<Left>"],
-        "after":["<Nop>"]
-     },                  
     {
-        "before":["<Right>"],
-        "after":["<Nop>"]
+        "before": [
+            "<Down>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
+    },
+    {
+        "before": [
+            "<Left>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
+    },
+    {
+        "before": [
+            "<Right>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
     }
 ],
-"vim.normalModeKeyBindingsNonRecursive": [           //normal 模式下的按键绑定 (同上)
+"vim.normalModeKeyBindingsNonRecursive": [ //normal 模式下的按键绑定 (同上)
     {
-    "before": ["<leader>", "d"],
-   "after": ["d", "d"] 
+        "before": [
+            "<leader>",
+            "d"
+        ],
+        "after": [
+            "d",
+            "d"
+        ]
     },
     {
-    "before": ["<C-n>"], 
-    "commands": [":nohl"] 
-     },
-     {
-        "before":["<Up>"],
-        "after":["<Nop>"]
-    }, 
-    {
-        "before":["<Down>"],
-        "after":["<Nop>"]
+        "before": [
+            "<C-n>"
+        ],
+        "commands": [
+            ":nohl"
+        ]
     },
-     {
-        "before":["<Left>"],
-        "after":["<Nop>"]
-     },                  
     {
-        "before":["<Right>"],
-        "after":["<Nop>"]
+        "before": [
+            "<Up>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
+    },
+    {
+        "before": [
+            "<Down>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
+    },
+    {
+        "before": [
+            "<Left>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
+    },
+    {
+        "before": [
+            "<Right>"
+        ],
+        "after": [
+            "<Nop>"
+        ]
     }
 ],
-"vim.leader": "<space>",            //leader 按键的指定，这里规定为了 space(空格) 键,j
-"vim.handleKeys": {                //这里制定了 ctrl A 键起作用，下同（说明：ctrl A 在 Vim 中有特殊含义）
+"vim.leader": "<space>", //leader 按键的指定，这里规定为了 space(空格) 键,j
+"vim.handleKeys": { //这里制定了 ctrl A 键起作用，下同（说明：ctrl A 在 Vim 中有特殊含义）
     "<C-a>": false,
     "<C-f>": false
 },
-//--------------------------  
+//--------------------------
 // 设置leader键为空格键
 "vim.leader": "<space>",
 "vim.normalModeKeyBindingsNonRecursive": [
-//更改vim的键位，把h变成光标前输入，ijkl变成上、左、下、右，这样更符合人体习惯
-//我只用了一回就熟练掌握了，而且再也不想回到hjkl表示上下左右的别扭方式了。
-//   i               ↑
-//j  k  l        ←  ↓  →
+    //更改vim的键位，把h变成光标前输入，ijkl变成上、左、下、右，这样更符合人体习惯
+    //我只用了一回就熟练掌握了，而且再也不想回到hjkl表示上下左右的别扭方式了。
+    //   i               ↑
+    //j  k  l        ←  ↓  →
     {
         "before": [
             "h"
@@ -231,8 +277,6 @@
             "workbench.action.closeActiveEditor"
         ],
     },
-
-
     // 按下leader键+k，向上搜索行（easymotion）
     {
         "before": [
@@ -295,82 +339,4 @@
         ]
     },
 ],
-"vim.visualModeKeyBindingsNonRecursive": [
-    //更改vim的键位，把h变成光标前输入，ijkl变成上、左、下、右，这样更符合人体习惯
-    //我只用了一回就熟练掌握了，而且再也不想回到hjkl表示上下左右的别扭方式了。
-    //   i               ↑
-    //j  k  l        ←  ↓  →
-    {
-        "before": [
-            "h"
-        ],
-        "after": [
-            "i"
-        ]
-    },
-    {
-        "before": [
-            "j"
-        ],
-        "after": [
-            "h"
-        ]
-    },
-    {
-        "before": [
-            "k"
-        ],
-        "after": [
-            "j"
-        ]
-    },
-    {
-        "before": [
-            "i"
-        ],
-        "after": [
-            "k"
-        ]
-    },
-    {
-        "before": [
-            "H"
-        ],
-        "after": [
-            "I"
-        ]
-    },
-    {
-        "before": [
-            "J"
-        ],
-        "after": [
-            "H"
-        ]
-    },
-    {
-        "before": [
-            "K"
-        ],
-        "after": [
-            "J"
-        ]
-    },
-    {
-        "before": [
-            "I"
-        ],
-        "after": [
-            "K"
-        ]
-    },
-],
 "vim.easymotion": true,
-=======
-{
-    "python.formatting.provider": "none",
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.autopep8"
-    }
-}
->>>>>>> 63e2668 (js_reverse4_19)
