@@ -1,110 +1,112 @@
-// vim setting
-"vim.easymotion": true, //easymotion 功能启用
-"vim.incsearch": true, //incsearch 功能启用
-"vim.useSystemClipboard": true, //使用系统剪贴板，启用
-"vim.useCtrlKeys": true, //使用 Ctrls 按键
-"vim.hlsearch": true, //启用 hlsearch
-"vim.insertModeKeyBindings": [ //insert 模式下的按键绑定
-    {
-        "before": [
-            "j",
-            "j"
-        ], //使用 before 代替 after 中的按键或者命令（这里的 befor 和 after 对象均为数组）
-        "after": [
-            "<Esc>"
-        ]
+{ // vim setting
+    "vim.easymotion": true, //easymotion 功能启用
+    "vim.incsearch": true, //incsearch 功能启用
+    "vim.useSystemClipboard": true, //使用系统剪贴板，启用
+    "vim.useCtrlKeys": true, //使用 Ctrls 按键
+    "vim.hlsearch": true, //启用 hlsearch
+    "vim.insertModeKeyBindings": [ //insert 模式下的按键绑定
+        {
+            "before": [
+                "j",
+                "j"
+            ], //使用 before 代替 after 中的按键或者命令（这里的 befor 和 after 对象均为数组）
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [ //normal 模式下的按键绑定 (同上)
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        }
+    ],
+    "vim.leader": "<space>", //leader 按键的指定，这里规定为了 space(空格) 键,j
+    "vim.handleKeys": { //这里制定了 ctrl A 键起作用，下同（说明：ctrl A 在 Vim 中有特殊含义）
+        "<C-a>": false,
+        "<C-f>": false
     },
-    {
-        "before": [
-            "<Up>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    },
-    {
-        "before": [
-            "<Down>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    },
-    {
-        "before": [
-            "<Left>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    },
-    {
-        "before": [
-            "<Right>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    }
-],
-"vim.normalModeKeyBindingsNonRecursive": [ //normal 模式下的按键绑定 (同上)
-    {
-        "before": [
-            "<leader>",
-            "d"
-        ],
-        "after": [
-            "d",
-            "d"
-        ]
-    },
-    {
-        "before": [
-            "<C-n>"
-        ],
-        "commands": [
-            ":nohl"
-        ]
-    },
-    {
-        "before": [
-            "<Up>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    },
-    {
-        "before": [
-            "<Down>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    },
-    {
-        "before": [
-            "<Left>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    },
-    {
-        "before": [
-            "<Right>"
-        ],
-        "after": [
-            "<Nop>"
-        ]
-    }
-],
-"vim.leader": "<space>", //leader 按键的指定，这里规定为了 space(空格) 键,j
-"vim.handleKeys": { //这里制定了 ctrl A 键起作用，下同（说明：ctrl A 在 Vim 中有特殊含义）
-    "<C-a>": false,
-    "<C-f>": false
-},
-//--------------------------
-// 设置leader键为空格键
-"vim.leader": "<space>",
-"vim.easymotion": true,
+    //--------------------------
+    // 设置leader键为空格键
+    "vim.leader": "<space>",
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "onFocusChange",
+}
