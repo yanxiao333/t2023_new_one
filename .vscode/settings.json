@@ -4,48 +4,133 @@
     "vim.useSystemClipboard": true, //使用系统剪贴板，启用
     "vim.useCtrlKeys": true, //使用 Ctrls 按键
     "vim.hlsearch": true, //启用 hlsearch
-    "vim.insertModeKeyBindings": [ //insert 模式下的按键绑定
+    // vim插入模式
+    "vim.insertModeKeyBindings": [
         {
             "before": [
                 "j",
                 "j"
-            ], //使用 before 代替 after 中的按键或者命令（这里的 befor 和 after 对象均为数组）
-            "after": [
-                "<Esc>"
-            ]
-        },
-        {
-            "before": [
-                "<Up>"
             ],
             "after": [
-                "<Nop>"
-            ]
-        },
-        {
-            "before": [
-                "<Down>"
-            ],
-            "after": [
-                "<Nop>"
-            ]
-        },
-        {
-            "before": [
-                "<Left>"
-            ],
-            "after": [
-                "<Nop>"
-            ]
-        },
-        {
-            "before": [
-                "<Right>"
-            ],
-            "after": [
-                "<Nop>"
+                "<esc>"
             ]
         }
+    ],
+    // vim命令模式
+    "vim.normalModeKeyBindings": [
+        // 保存并退出当前文件Q
+        {
+            "before": [
+                "Q"
+            ],
+            "commands": [
+                ":wq"
+            ]
+        },
+        // 复制全文 ,v
+        {
+            "before": [
+                "<leader>",
+                "v"
+            ],
+            "after": [
+                "g",
+                "g",
+                "V",
+                "G",
+                "y"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // easymotion 快速跳转 ,s + <char>
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "s"
+            ]
+        },
+        // 打开命令面板 :
+        {
+            "before": [
+                ":"
+            ],
+            "commands": [
+                "workbenjh.jaction.showCommands",
+            ]
+        },
+        // 保存当前文件
+        {
+            "before": [
+                "leader",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+        // 移到行首H,j 移到行尾L
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        // 删到行首，删到行尾  暂时只能用leader + H/L
+        {
+            "before": [
+                "leader",
+                "H"
+            ],
+            "after": [
+                "d",
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "L"
+            ],
+            "after": [
+                "d",
+                "$"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // 调整缩进
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [ //normal 模式下的按键绑定 (同上)
         {
@@ -106,7 +191,6 @@
     },
     //--------------------------
     // 设置leader键为空格键
-    "vim.leader": "<space>",
     "editor.lineNumbers": "relative",
     "files.autoSave": "onFocusChange",
 }
